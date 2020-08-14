@@ -27,6 +27,16 @@ const UIStrings = {
     =1 {Unsupported CSS Property: {properties}}
     other {Unsupported CSS Properties: {properties}}
   }`,
+  /** Name of a compositor failure reason where the transform being animated depends on the box size. */
+  transformDependsBoxSize: 'Transform related property depends on box size',
+  /** Name of a compositor failure reason where the filter being animated may move pixels. */
+  filterMayMovePixels: 'Filter related property may move pixels',
+  /** Name of a compositor failure reason where the effect has a composite mode which is not replace. */
+  nonReplaceCompositeMode: 'Effect has composite mode other than "replace"',
+  /** Name of a compositor failure reason where the element already has an incompatible animation. */
+  incompatibleAnimations: 'Target has an incompatible animation',
+  /** Name of a compositor failure reason where the effect has unsupported timing parameters. */
+  unsupportedTimingParameters: 'Effect has unsupported timing parameters',
 };
 
 const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
@@ -40,6 +50,26 @@ const ACTIONABLE_FAILURE_REASONS = [
   {
     flag: 1 << 13,
     text: UIStrings.unsupportedCSSProperty,
+  },
+  {
+    flag: 1 << 11,
+    text: UIStrings.transformDependsBoxSize,
+  },
+  {
+    flag: 1 << 12,
+    text: UIStrings.filterMayMovePixels,
+  },
+  {
+    flag: 1 << 4,
+    text: UIStrings.nonReplaceCompositeMode,
+  },
+  {
+    flag: 1 << 6,
+    text: UIStrings.incompatibleAnimations,
+  },
+  {
+    flag: 1 << 3,
+    text: UIStrings.unsupportedTimingParameters,
   },
 ];
 
